@@ -1,14 +1,7 @@
-CREATE DATABASE  IF NOT EXISTS `db_Mall` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `db_Mall`;
--- MySQL dump 10.13  Distrib 8.0.20, for macos10.15 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.21, for Win64 (x86_64)
 --
--- Host: localhost    Database: db_Mall
-<<<<<<< HEAD
--- Author:Dzyx
-=======
->>>>>>> newbranch
 -- ------------------------------------------------------
--- Server version	8.0.20
+-- Server version	8.0.21
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -56,7 +49,6 @@ DROP TABLE IF EXISTS `cart`;
 CREATE TABLE `cart` (
   `goods_id` int unsigned NOT NULL,
   `customer_id` int unsigned NOT NULL,
-  `cart_num` int unsigned DEFAULT NULL,
   PRIMARY KEY (`goods_id`,`customer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -94,13 +86,13 @@ LOCK TABLES `consume` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Customer`
+-- Table structure for table `customer`
 --
 
-DROP TABLE IF EXISTS `Customer`;
+DROP TABLE IF EXISTS `customer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Customer` (
+CREATE TABLE `customer` (
   `customer_id` int unsigned NOT NULL,
   `customer_name` varchar(20) NOT NULL,
   `customer_phone_num` int unsigned NOT NULL,
@@ -110,67 +102,63 @@ CREATE TABLE `Customer` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Customer`
+-- Dumping data for table `customer`
 --
 
-LOCK TABLES `Customer` WRITE;
-/*!40000 ALTER TABLE `Customer` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Customer` ENABLE KEYS */;
+LOCK TABLES `customer` WRITE;
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Goods`
+-- Table structure for table `goods`
 --
 
-DROP TABLE IF EXISTS `Goods`;
+DROP TABLE IF EXISTS `goods`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Goods` (
+CREATE TABLE `goods` (
   `goods_id` int unsigned NOT NULL,
-  `price` int unsigned NOT NULL,
-  `type` varchar(20) NOT NULL,
-  `weight` int DEFAULT NULL,
-  `color` varchar(20) DEFAULT NULL,
+  `price` decimal(10,2) unsigned DEFAULT NULL,
+  `type` varchar(45) DEFAULT NULL,
+  `weight` int unsigned DEFAULT NULL,
+  `color` varchar(45) DEFAULT NULL,
   `size` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`goods_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Goods`
+-- Dumping data for table `goods`
 --
 
-LOCK TABLES `Goods` WRITE;
-/*!40000 ALTER TABLE `Goods` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Goods` ENABLE KEYS */;
+LOCK TABLES `goods` WRITE;
+/*!40000 ALTER TABLE `goods` DISABLE KEYS */;
+/*!40000 ALTER TABLE `goods` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `in`
+-- Table structure for table `goods_order`
 --
 
-DROP TABLE IF EXISTS `in`;
+DROP TABLE IF EXISTS `goods_order`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `in` (
+CREATE TABLE `goods_order` (
   `goods_id` int unsigned NOT NULL,
   `order_id` int unsigned NOT NULL,
-<<<<<<< HEAD
-  `num` int unsigned DEFAULT NULL,
-=======
-  `in_num` int unsigned DEFAULT NULL,
->>>>>>> newbranch
+
   PRIMARY KEY (`goods_id`,`order_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `in`
+-- Dumping data for table `goods_order`
 --
 
-LOCK TABLES `in` WRITE;
-/*!40000 ALTER TABLE `in` DISABLE KEYS */;
-/*!40000 ALTER TABLE `in` ENABLE KEYS */;
+LOCK TABLES `goods_order` WRITE;
+/*!40000 ALTER TABLE `goods_order` DISABLE KEYS */;
+/*!40000 ALTER TABLE `goods_order` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -198,13 +186,13 @@ LOCK TABLES `io_info` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Order`
+-- Table structure for table `order`
 --
 
-DROP TABLE IF EXISTS `Order`;
+DROP TABLE IF EXISTS `order`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Order` (
+CREATE TABLE `order` (
   `order_id` int unsigned NOT NULL,
   `date` datetime NOT NULL,
   PRIMARY KEY (`order_id`)
@@ -212,12 +200,12 @@ CREATE TABLE `Order` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Order`
+-- Dumping data for table `order`
 --
 
-LOCK TABLES `Order` WRITE;
-/*!40000 ALTER TABLE `Order` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Order` ENABLE KEYS */;
+LOCK TABLES `order` WRITE;
+/*!40000 ALTER TABLE `order` DISABLE KEYS */;
+/*!40000 ALTER TABLE `order` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -267,13 +255,13 @@ LOCK TABLES `sell` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Seller`
+-- Table structure for table `seller`
 --
 
-DROP TABLE IF EXISTS `Seller`;
+DROP TABLE IF EXISTS `seller`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Seller` (
+CREATE TABLE `seller` (
   `seller_id` int unsigned NOT NULL,
   `seller_name` varchar(20) NOT NULL,
   `seller_phone_num` int unsigned NOT NULL,
@@ -283,22 +271,22 @@ CREATE TABLE `Seller` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Seller`
+-- Dumping data for table `seller`
 --
 
-LOCK TABLES `Seller` WRITE;
-/*!40000 ALTER TABLE `Seller` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Seller` ENABLE KEYS */;
+LOCK TABLES `seller` WRITE;
+/*!40000 ALTER TABLE `seller` DISABLE KEYS */;
+/*!40000 ALTER TABLE `seller` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `seller_own_store`
+-- Table structure for table `seller_store`
 --
 
-DROP TABLE IF EXISTS `seller_own_store`;
+DROP TABLE IF EXISTS `seller_store`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `seller_own_store` (
+CREATE TABLE `seller_store` (
   `store_id` int unsigned NOT NULL,
   `seller_id` int unsigned NOT NULL,
   PRIMARY KEY (`store_id`)
@@ -306,22 +294,22 @@ CREATE TABLE `seller_own_store` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `seller_own_store`
+-- Dumping data for table `seller_store`
 --
 
-LOCK TABLES `seller_own_store` WRITE;
-/*!40000 ALTER TABLE `seller_own_store` DISABLE KEYS */;
-/*!40000 ALTER TABLE `seller_own_store` ENABLE KEYS */;
+LOCK TABLES `seller_store` WRITE;
+/*!40000 ALTER TABLE `seller_store` DISABLE KEYS */;
+/*!40000 ALTER TABLE `seller_store` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Staff`
+-- Table structure for table `staff`
 --
 
-DROP TABLE IF EXISTS `Staff`;
+DROP TABLE IF EXISTS `staff`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Staff` (
+CREATE TABLE `staff` (
   `staff_id` int unsigned NOT NULL,
   `staff_name` varchar(20) NOT NULL,
   `staff_phone_num` int unsigned NOT NULL,
@@ -330,12 +318,12 @@ CREATE TABLE `Staff` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Staff`
+-- Dumping data for table `staff`
 --
 
-LOCK TABLES `Staff` WRITE;
-/*!40000 ALTER TABLE `Staff` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Staff` ENABLE KEYS */;
+LOCK TABLES `staff` WRITE;
+/*!40000 ALTER TABLE `staff` DISABLE KEYS */;
+/*!40000 ALTER TABLE `staff` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -348,11 +336,7 @@ DROP TABLE IF EXISTS `stock`;
 CREATE TABLE `stock` (
   `store_id` int unsigned NOT NULL,
   `warehouse_id` int unsigned NOT NULL,
-<<<<<<< HEAD
-  `num` int unsigned DEFAULT NULL,
-=======
-  `stock_num` int unsigned DEFAULT NULL,
->>>>>>> newbranch
+
   PRIMARY KEY (`store_id`,`warehouse_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -367,13 +351,13 @@ LOCK TABLES `stock` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Store`
+-- Table structure for table `store`
 --
 
-DROP TABLE IF EXISTS `Store`;
+DROP TABLE IF EXISTS `store`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Store` (
+CREATE TABLE `store` (
   `store_id` int unsigned NOT NULL,
   `store_name` varchar(45) NOT NULL,
   `fans_num` int unsigned NOT NULL,
@@ -382,22 +366,45 @@ CREATE TABLE `Store` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Store`
+-- Dumping data for table `store`
 --
 
-LOCK TABLES `Store` WRITE;
-/*!40000 ALTER TABLE `Store` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Store` ENABLE KEYS */;
+LOCK TABLES `store` WRITE;
+/*!40000 ALTER TABLE `store` DISABLE KEYS */;
+/*!40000 ALTER TABLE `store` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `TransportInfo`
+-- Table structure for table `store_staff`
 --
 
-DROP TABLE IF EXISTS `TransportInfo`;
+DROP TABLE IF EXISTS `store_staff`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `TransportInfo` (
+CREATE TABLE `store_staff` (
+  `store_id` int NOT NULL,
+  `staff_id` int NOT NULL,
+  PRIMARY KEY (`store_id`,`staff_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `store_staff`
+--
+
+LOCK TABLES `store_staff` WRITE;
+/*!40000 ALTER TABLE `store_staff` DISABLE KEYS */;
+/*!40000 ALTER TABLE `store_staff` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `transportinfo`
+--
+
+DROP TABLE IF EXISTS `transportinfo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `transportinfo` (
   `trans_id` int unsigned NOT NULL,
   `departure` datetime NOT NULL,
   `destination` varchar(80) NOT NULL,
@@ -407,22 +414,22 @@ CREATE TABLE `TransportInfo` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `TransportInfo`
+-- Dumping data for table `transportinfo`
 --
 
-LOCK TABLES `TransportInfo` WRITE;
-/*!40000 ALTER TABLE `TransportInfo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `TransportInfo` ENABLE KEYS */;
+LOCK TABLES `transportinfo` WRITE;
+/*!40000 ALTER TABLE `transportinfo` DISABLE KEYS */;
+/*!40000 ALTER TABLE `transportinfo` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Warehouse`
+-- Table structure for table `warehouse`
 --
 
-DROP TABLE IF EXISTS `Warehouse`;
+DROP TABLE IF EXISTS `warehouse`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Warehouse` (
+CREATE TABLE `warehouse` (
   `warehouse_id` int unsigned NOT NULL,
   `warehouse_name` varchar(45) NOT NULL,
   `address` varchar(80) NOT NULL,
@@ -431,35 +438,12 @@ CREATE TABLE `Warehouse` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Warehouse`
+-- Dumping data for table `warehouse`
 --
 
-LOCK TABLES `Warehouse` WRITE;
-/*!40000 ALTER TABLE `Warehouse` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Warehouse` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `work`
---
-
-DROP TABLE IF EXISTS `work`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `work` (
-  `store_id` int unsigned NOT NULL,
-  `staff_id` int unsigned NOT NULL,
-  PRIMARY KEY (`store_id`,`staff_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `work`
---
-
-LOCK TABLES `work` WRITE;
-/*!40000 ALTER TABLE `work` DISABLE KEYS */;
-/*!40000 ALTER TABLE `work` ENABLE KEYS */;
+LOCK TABLES `warehouse` WRITE;
+/*!40000 ALTER TABLE `warehouse` DISABLE KEYS */;
+/*!40000 ALTER TABLE `warehouse` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -470,9 +454,3 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
-<<<<<<< HEAD
--- Dump completed on 2020-07-24 20:47:46
-=======
--- Dump completed on 2020-07-24 21:38:35
->>>>>>> newbranch
