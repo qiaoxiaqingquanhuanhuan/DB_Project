@@ -1,6 +1,5 @@
 -- MySQL dump 10.13  Distrib 8.0.21, for Win64 (x86_64)
 --
--- Host: localhost    Database: db_mall
 -- ------------------------------------------------------
 -- Server version	8.0.21
 
@@ -148,6 +147,7 @@ DROP TABLE IF EXISTS `goods_order`;
 CREATE TABLE `goods_order` (
   `goods_id` int unsigned NOT NULL,
   `order_id` int unsigned NOT NULL,
+
   PRIMARY KEY (`goods_id`,`order_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -336,7 +336,7 @@ DROP TABLE IF EXISTS `stock`;
 CREATE TABLE `stock` (
   `store_id` int unsigned NOT NULL,
   `warehouse_id` int unsigned NOT NULL,
-  `num` int unsigned DEFAULT NULL,
+
   PRIMARY KEY (`store_id`,`warehouse_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -454,5 +454,3 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2020-07-25 12:06:37
