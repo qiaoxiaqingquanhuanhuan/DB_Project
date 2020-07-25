@@ -3,6 +3,10 @@ USE `db_Mall`;
 -- MySQL dump 10.13  Distrib 8.0.20, for macos10.15 (x86_64)
 --
 -- Host: localhost    Database: db_Mall
+<<<<<<< HEAD
+-- Author:Dzyx
+=======
+>>>>>>> newbranch
 -- ------------------------------------------------------
 -- Server version	8.0.20
 
@@ -151,7 +155,11 @@ DROP TABLE IF EXISTS `in`;
 CREATE TABLE `in` (
   `goods_id` int unsigned NOT NULL,
   `order_id` int unsigned NOT NULL,
+<<<<<<< HEAD
+  `num` int unsigned DEFAULT NULL,
+=======
   `in_num` int unsigned DEFAULT NULL,
+>>>>>>> newbranch
   PRIMARY KEY (`goods_id`,`order_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -340,7 +348,11 @@ DROP TABLE IF EXISTS `stock`;
 CREATE TABLE `stock` (
   `store_id` int unsigned NOT NULL,
   `warehouse_id` int unsigned NOT NULL,
+<<<<<<< HEAD
+  `num` int unsigned DEFAULT NULL,
+=======
   `stock_num` int unsigned DEFAULT NULL,
+>>>>>>> newbranch
   PRIMARY KEY (`store_id`,`warehouse_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -459,4 +471,8 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+<<<<<<< HEAD
+-- Dump completed on 2020-07-24 20:47:46
+=======
 -- Dump completed on 2020-07-24 21:38:35
+>>>>>>> newbranch
