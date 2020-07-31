@@ -3,8 +3,12 @@ USE `db_mall`;
 -- MySQL dump 10.13  Distrib 8.0.20, for macos10.15 (x86_64)
 --
 -- Host: localhost    Database: db_mall
+=======
+-- MySQL dump 10.13  Distrib 8.0.21, for Win64 (x86_64)
+--
+
 -- ------------------------------------------------------
--- Server version	8.0.20
+-- Server version	8.0.21
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -174,6 +178,10 @@ DROP TABLE IF EXISTS `goods_order`;
 CREATE TABLE `goods_order` (
   `goods_id` int unsigned NOT NULL,
   `order_id` int unsigned NOT NULL,
+
+=======
+
+
   PRIMARY KEY (`goods_id`,`order_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -363,6 +371,10 @@ DROP TABLE IF EXISTS `stock`;
 CREATE TABLE `stock` (
   `store_id` int unsigned NOT NULL,
   `warehouse_id` int unsigned NOT NULL,
+
+=======
+
+
   PRIMARY KEY (`store_id`,`warehouse_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -393,6 +405,7 @@ CREATE TABLE `store` (
 
 --
 -- Dumping data for table `store`
+
 --
 
 LOCK TABLES `store` WRITE;
@@ -436,6 +449,26 @@ CREATE TABLE `transportinfo` (
   `destination` varchar(80) NOT NULL,
   `fare` float unsigned NOT NULL,
   PRIMARY KEY (`trans_id`)
+=======
+--
+
+LOCK TABLES `store` WRITE;
+/*!40000 ALTER TABLE `store` DISABLE KEYS */;
+/*!40000 ALTER TABLE `store` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `store_staff`
+--
+
+DROP TABLE IF EXISTS `store_staff`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `store_staff` (
+  `store_id` int NOT NULL,
+  `staff_id` int NOT NULL,
+  PRIMARY KEY (`store_id`,`staff_id`)
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -461,6 +494,29 @@ CREATE TABLE `user` (
   `password` varchar(20) DEFAULT NULL,
   `type` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`ID`)
+=======
+-- Dumping data for table `store_staff`
+--
+
+LOCK TABLES `store_staff` WRITE;
+/*!40000 ALTER TABLE `store_staff` DISABLE KEYS */;
+/*!40000 ALTER TABLE `store_staff` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `transportinfo`
+--
+
+DROP TABLE IF EXISTS `transportinfo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `transportinfo` (
+  `trans_id` int unsigned NOT NULL,
+  `departure` datetime NOT NULL,
+  `destination` varchar(80) NOT NULL,
+  `fare` float unsigned NOT NULL,
+  PRIMARY KEY (`trans_id`)
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -471,6 +527,14 @@ CREATE TABLE `user` (
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
+=======
+-- Dumping data for table `transportinfo`
+--
+
+LOCK TABLES `transportinfo` WRITE;
+/*!40000 ALTER TABLE `transportinfo` DISABLE KEYS */;
+/*!40000 ALTER TABLE `transportinfo` ENABLE KEYS */;
+
 UNLOCK TABLES;
 
 --
@@ -507,3 +571,4 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2020-07-30 21:19:00
+=======
