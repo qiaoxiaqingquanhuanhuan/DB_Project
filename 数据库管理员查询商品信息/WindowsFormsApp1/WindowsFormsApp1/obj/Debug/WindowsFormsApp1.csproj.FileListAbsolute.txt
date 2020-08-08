@@ -1,0 +1,14 @@
+E:\VS_program\数据库管理员查询56\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+E:\VS_program\数据库管理员查询56\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+E:\VS_program\数据库管理员查询56\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+E:\VS_program\数据库管理员查询56\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+E:\VS_program\数据库管理员查询56\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+E:\VS_program\数据库管理员查询56\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+E:\VS_program\数据库管理员查询56\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+E:\VS_program\数据库管理员查询56\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+E:\VS_program\数据库管理员查询56\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+E:\VS_program\数据库管理员查询56\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Formmain.resources
+E:\VS_program\数据库管理员查询56\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form_SaleResult.resources
+E:\VS_program\数据库管理员查询56\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form_SaleMoneyResult.resources
+E:\VS_program\数据库管理员查询56\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form_MonthSaleResult.resources
+E:\VS_program\数据库管理员查询56\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form_MonthSaleMoneyResult.resources
