@@ -3,12 +3,8 @@ USE `db_mall`;
 -- MySQL dump 10.13  Distrib 8.0.20, for macos10.15 (x86_64)
 --
 -- Host: localhost    Database: db_mall
-=======
--- MySQL dump 10.13  Distrib 8.0.21, for Win64 (x86_64)
---
-
 -- ------------------------------------------------------
--- Server version	8.0.21
+-- Server version	8.0.20
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -36,15 +32,6 @@ CREATE TABLE `administrator` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `administrator`
---
-
-LOCK TABLES `administrator` WRITE;
-/*!40000 ALTER TABLE `administrator` DISABLE KEYS */;
-/*!40000 ALTER TABLE `administrator` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `assess`
 --
 
@@ -61,15 +48,6 @@ CREATE TABLE `assess` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `assess`
---
-
-LOCK TABLES `assess` WRITE;
-/*!40000 ALTER TABLE `assess` DISABLE KEYS */;
-/*!40000 ALTER TABLE `assess` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `cart`
 --
 
@@ -84,15 +62,6 @@ CREATE TABLE `cart` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `cart`
---
-
-LOCK TABLES `cart` WRITE;
-/*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cart` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `consume`
 --
 
@@ -105,15 +74,6 @@ CREATE TABLE `consume` (
   PRIMARY KEY (`order_id`,`customer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `consume`
---
-
-LOCK TABLES `consume` WRITE;
-/*!40000 ALTER TABLE `consume` DISABLE KEYS */;
-/*!40000 ALTER TABLE `consume` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `customer`
@@ -132,15 +92,6 @@ CREATE TABLE `customer` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `customer`
---
-
-LOCK TABLES `customer` WRITE;
-/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `goods`
 --
 
@@ -149,24 +100,15 @@ DROP TABLE IF EXISTS `goods`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `goods` (
   `goods_id` int unsigned NOT NULL,
-  `price` decimal(10,2) unsigned DEFAULT NULL,
   `type` varchar(45) DEFAULT NULL,
   `weight` int unsigned DEFAULT NULL,
   `color` varchar(45) DEFAULT NULL,
   `size` varchar(45) DEFAULT NULL,
   `goods_name` varchar(45) DEFAULT NULL,
+  `price` decimal(10,2) unsigned DEFAULT NULL,
   PRIMARY KEY (`goods_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `goods`
---
-
-LOCK TABLES `goods` WRITE;
-/*!40000 ALTER TABLE `goods` DISABLE KEYS */;
-/*!40000 ALTER TABLE `goods` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `goods_order`
@@ -178,22 +120,12 @@ DROP TABLE IF EXISTS `goods_order`;
 CREATE TABLE `goods_order` (
   `goods_id` int unsigned NOT NULL,
   `order_id` int unsigned NOT NULL,
-
-=======
-
-
+  `cost` decimal(10,2) unsigned DEFAULT NULL,
+  `num` int unsigned DEFAULT NULL,
+  `store_id` int unsigned NOT NULL,
   PRIMARY KEY (`goods_id`,`order_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `goods_order`
---
-
-LOCK TABLES `goods_order` WRITE;
-/*!40000 ALTER TABLE `goods_order` DISABLE KEYS */;
-/*!40000 ALTER TABLE `goods_order` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `io_info`
@@ -212,15 +144,6 @@ CREATE TABLE `io_info` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `io_info`
---
-
-LOCK TABLES `io_info` WRITE;
-/*!40000 ALTER TABLE `io_info` DISABLE KEYS */;
-/*!40000 ALTER TABLE `io_info` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `order`
 --
 
@@ -233,15 +156,6 @@ CREATE TABLE `order` (
   PRIMARY KEY (`order_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `order`
---
-
-LOCK TABLES `order` WRITE;
-/*!40000 ALTER TABLE `order` DISABLE KEYS */;
-/*!40000 ALTER TABLE `order` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `order_trans`
@@ -258,15 +172,6 @@ CREATE TABLE `order_trans` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `order_trans`
---
-
-LOCK TABLES `order_trans` WRITE;
-/*!40000 ALTER TABLE `order_trans` DISABLE KEYS */;
-/*!40000 ALTER TABLE `order_trans` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `sell`
 --
 
@@ -279,15 +184,6 @@ CREATE TABLE `sell` (
   PRIMARY KEY (`store_id`,`goods_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `sell`
---
-
-LOCK TABLES `sell` WRITE;
-/*!40000 ALTER TABLE `sell` DISABLE KEYS */;
-/*!40000 ALTER TABLE `sell` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `seller`
@@ -306,15 +202,6 @@ CREATE TABLE `seller` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `seller`
---
-
-LOCK TABLES `seller` WRITE;
-/*!40000 ALTER TABLE `seller` DISABLE KEYS */;
-/*!40000 ALTER TABLE `seller` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `seller_store`
 --
 
@@ -327,15 +214,6 @@ CREATE TABLE `seller_store` (
   PRIMARY KEY (`store_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `seller_store`
---
-
-LOCK TABLES `seller_store` WRITE;
-/*!40000 ALTER TABLE `seller_store` DISABLE KEYS */;
-/*!40000 ALTER TABLE `seller_store` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `staff`
@@ -353,15 +231,6 @@ CREATE TABLE `staff` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `staff`
---
-
-LOCK TABLES `staff` WRITE;
-/*!40000 ALTER TABLE `staff` DISABLE KEYS */;
-/*!40000 ALTER TABLE `staff` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `stock`
 --
 
@@ -371,22 +240,9 @@ DROP TABLE IF EXISTS `stock`;
 CREATE TABLE `stock` (
   `store_id` int unsigned NOT NULL,
   `warehouse_id` int unsigned NOT NULL,
-
-=======
-
-
   PRIMARY KEY (`store_id`,`warehouse_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `stock`
---
-
-LOCK TABLES `stock` WRITE;
-/*!40000 ALTER TABLE `stock` DISABLE KEYS */;
-/*!40000 ALTER TABLE `stock` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `store`
@@ -399,19 +255,10 @@ CREATE TABLE `store` (
   `store_id` int unsigned NOT NULL,
   `store_name` varchar(45) NOT NULL,
   `fans_num` int unsigned NOT NULL,
+  `type` varchar(45) NOT NULL,
   PRIMARY KEY (`store_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `store`
-
---
-
-LOCK TABLES `store` WRITE;
-/*!40000 ALTER TABLE `store` DISABLE KEYS */;
-/*!40000 ALTER TABLE `store` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `store_staff`
@@ -426,15 +273,6 @@ CREATE TABLE `store_staff` (
   PRIMARY KEY (`store_id`,`staff_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `store_staff`
---
-
-LOCK TABLES `store_staff` WRITE;
-/*!40000 ALTER TABLE `store_staff` DISABLE KEYS */;
-/*!40000 ALTER TABLE `store_staff` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `transportinfo`
@@ -449,37 +287,8 @@ CREATE TABLE `transportinfo` (
   `destination` varchar(80) NOT NULL,
   `fare` float unsigned NOT NULL,
   PRIMARY KEY (`trans_id`)
-=======
---
-
-LOCK TABLES `store` WRITE;
-/*!40000 ALTER TABLE `store` DISABLE KEYS */;
-/*!40000 ALTER TABLE `store` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `store_staff`
---
-
-DROP TABLE IF EXISTS `store_staff`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `store_staff` (
-  `store_id` int NOT NULL,
-  `staff_id` int NOT NULL,
-  PRIMARY KEY (`store_id`,`staff_id`)
-
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `transportinfo`
---
-
-LOCK TABLES `transportinfo` WRITE;
-/*!40000 ALTER TABLE `transportinfo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `transportinfo` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `user`
@@ -494,48 +303,8 @@ CREATE TABLE `user` (
   `password` varchar(20) DEFAULT NULL,
   `type` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-=======
--- Dumping data for table `store_staff`
---
-
-LOCK TABLES `store_staff` WRITE;
-/*!40000 ALTER TABLE `store_staff` DISABLE KEYS */;
-/*!40000 ALTER TABLE `store_staff` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `transportinfo`
---
-
-DROP TABLE IF EXISTS `transportinfo`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `transportinfo` (
-  `trans_id` int unsigned NOT NULL,
-  `departure` datetime NOT NULL,
-  `destination` varchar(80) NOT NULL,
-  `fare` float unsigned NOT NULL,
-  PRIMARY KEY (`trans_id`)
-
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `user`
---
-
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
-=======
--- Dumping data for table `transportinfo`
---
-
-LOCK TABLES `transportinfo` WRITE;
-/*!40000 ALTER TABLE `transportinfo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `transportinfo` ENABLE KEYS */;
-
-UNLOCK TABLES;
 
 --
 -- Table structure for table `warehouse`
@@ -551,15 +320,6 @@ CREATE TABLE `warehouse` (
   PRIMARY KEY (`warehouse_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `warehouse`
---
-
-LOCK TABLES `warehouse` WRITE;
-/*!40000 ALTER TABLE `warehouse` DISABLE KEYS */;
-/*!40000 ALTER TABLE `warehouse` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -570,5 +330,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-07-30 21:19:00
-=======
+-- Dump completed on 2020-08-10 14:23:40
