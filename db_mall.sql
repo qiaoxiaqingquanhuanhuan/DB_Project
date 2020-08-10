@@ -4,7 +4,7 @@ USE `db_mall`;
 --
 -- Host: localhost    Database: db_mall
 -- ------------------------------------------------------
--- Server version	8.0.20
+-- Server version 8.0.20
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -42,7 +42,7 @@ CREATE TABLE `assess` (
   `goods_id` int unsigned NOT NULL,
   `customer_id` int unsigned NOT NULL,
   `order_id` int unsigned NOT NULL,
-  `assessment` varchar(45) DEFAULT NULL,
+  `assessment` int DEFAULT NULL,
   PRIMARY KEY (`goods_id`,`customer_id`,`order_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -330,4 +330,4 @@ CREATE TABLE `warehouse` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-10 14:23:40
+-- Dump completed on 2020-08-10 16:50:04
