@@ -1,0 +1,11 @@
+E:\VS_program\数据库管理员查询运输信息\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+E:\VS_program\数据库管理员查询运输信息\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+E:\VS_program\数据库管理员查询运输信息\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+E:\VS_program\数据库管理员查询运输信息\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+E:\VS_program\数据库管理员查询运输信息\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+E:\VS_program\数据库管理员查询运输信息\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form_TransMoneyResult.resources
+E:\VS_program\数据库管理员查询运输信息\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+E:\VS_program\数据库管理员查询运输信息\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+E:\VS_program\数据库管理员查询运输信息\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+E:\VS_program\数据库管理员查询运输信息\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+E:\VS_program\数据库管理员查询运输信息\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
